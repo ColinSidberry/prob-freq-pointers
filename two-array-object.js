@@ -1,3 +1,5 @@
+"use strict"; //Note: add use strict
+
 /**
  * Psuedo Code
  * make an empty object
@@ -11,14 +13,16 @@
  */
 
 // add whatever parameters you deem necessary
+//Note: add docstring
 function twoArrayObject(keys,values) {
-    let result = {};
-    for(let i = 0; i < keys.length; i++){
-        if(values[i] === undefined){
-            result[keys[i]] = null;
-        } else {
-            result[keys[i]] = values[i];
-        }
+    let result = {};//Note: keysToValues
+    for(let i = 0; i < keys.length; i++){ //Note: make the if else into a ternery
+        result[keys[i]] = values[i] === undefined ? null : values[i];
+        // if(values[i] === undefined){
+        //     result[keys[i]] = null;
+        // } else {
+        //     result[keys[i]] = values[i];
+        // }
     }
     return result;
 }

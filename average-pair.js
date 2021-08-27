@@ -1,3 +1,4 @@
+"use strict";//Note: add use strict
 /**
  * Pseudo code: 
  * (Good use of the pointers)
@@ -22,10 +23,10 @@
     -- return false;
  */
 
-
+//Note: Add docstring
 // add whatever parameters you deem necessary
-function averagePair(array,targetAvg) {
-    if(array.length === 0) { //O(1) or O(n)???
+function averagePair(array,targetAvg) {//Note: change array to set of integers
+    if(array.length === 0) { //O(1)
         return false;
     }
 

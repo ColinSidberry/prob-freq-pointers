@@ -1,3 +1,4 @@
+"use strict";
 /**
  * 
 
@@ -18,40 +19,46 @@
  */
 
 //Failing Test
-    // expect(canConstructWord("abcd", "")).toBe(false);
+// expect(canConstructWord("abcd", "")).toBe(false);
 
 // add whatever parameters you deem necessary & write doc comment
-function canConstructWord(word, string) {
+
+//Note: Make a proper docstring
+function canConstructWord(word, string) {//Note: make string => lettersSet
+    if (!string) {
+        return false;
+    }
+
     let wordFreq = createFrequencyCounter(word);
     let stringFreq = createFrequencyCounter(string);
 
-    console.log("stringFreq", stringFreq);
-    console.log("undefined comparison: ", undefined < 1);
-    for(let key in wordFreq){
+    // console.log("stringFreq", stringFreq);
+    // console.log("undefined comparison: ", undefined < 1);
+    for (let key in wordFreq) {
         // console.log("wordFreq[key]", wordFreq[key]);
         // console.log("stringFreq[key]", stringFreq[key]);
-        if (stringFreq[key] === undefined){
-            return false;
-        }
 
-        if(stringFreq[key] < wordFreq[key] ){
+        // }
+
+        if (stringFreq[key] < wordFreq[key]) {
             return false;
         }
     }
     return true;
 }
 
-  function createFrequencyCounter(array) {
+//Note: Make docstring
+function createFrequencyCounter(array) {//Note: make array iterable
     let freqs = {};
-  
+
     for (let val of array) {
-      let valCount = freqs[val] || 0;
-      freqs[val] = valCount + 1;
+        let valCount = freqs[val] || 0;
+        freqs[val] = valCount + 1;
     }
-  
+
     return freqs;
-  }
-  
+}
+
 
 //   Sample----------------
 //  *  canConstructWord('aa', 'abc')
