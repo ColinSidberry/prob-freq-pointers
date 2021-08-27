@@ -25,24 +25,24 @@
 
 // add whatever parameters you deem necessary
 function averagePair(array,targetAvg) {
-    if(array.length === 0) {
+    if(array.length === 0) { //O(1) or O(n)???
         return false;
     }
 
     let left = 0;
     let right = array.length -1;
 
-    while (left < right) {
-        let avg = (array[left] + array[right]) /2;
+    while (left < right) { //O(n)
+        let avg = (array[left] + array[right]) /2; //O(1)
 
-        if (avg === targetAvg) {
+        if (avg === targetAvg) { //O(1)
             return true;
         }
-        else if (avg > targetAvg) {
+        else if (avg > targetAvg) { //O(1)
             right -= 1;
         }
         else {
-            left += 1;
+            left += 1; //O(1)
         }
     }
     return false;
